@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Pizza-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="InterfaceController" title="Pizza" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="PizzaDesdeWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="1" alignment="left" text="Bienvenido" textAlignment="center" id="i17-iX-PLU">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <label alignment="left" text="Este asistente lo guiará durante el proceso de elaboración de su pizza" numberOfLines="5" id="nAs-SG-ObI">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                        <button width="1" alignment="left" title="Comenzar" id="ZFR-We-uE0">
+                            <connections>
+                                <segue destination="L1W-ea-XZ7" kind="push" identifier="TamanoSegue" id="Mxb-M5-tbJ"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Inicio-->
+        <scene sceneID="Sxn-r2-iWV">
+            <objects>
+                <controller title="Inicio" id="L1W-ea-XZ7" customClass="TamanoController" customModule="PizzaDesdeWatch_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Tamaño" textAlignment="center" id="cPf-eC-WMS"/>
+                        <picker height="100" alignment="left" id="fff-8p-soT">
+                            <connections>
+                                <action selector="onPickerChange:" destination="L1W-ea-XZ7" id="PUb-3K-hgL"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Siguiente" id="dM0-R5-J0m">
+                            <connections>
+                                <segue destination="lpL-5T-fQ6" kind="push" identifier="MasaSegue" id="xDl-Tk-kBd"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="pickerTamano" destination="fff-8p-soT" id="v4J-nx-nX1"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="447" y="349"/>
+        </scene>
+        <!--Tamaño-->
+        <scene sceneID="O3q-TS-LyF">
+            <objects>
+                <controller title="Tamaño" id="lpL-5T-fQ6" customClass="MasaController" customModule="PizzaDesdeWatch_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Masa" textAlignment="center" id="0jQ-hT-UnM"/>
+                        <picker height="100" alignment="left" id="Qvn-KR-e5u">
+                            <connections>
+                                <action selector="onPickerchange:" destination="lpL-5T-fQ6" id="sd3-mJ-vyG"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Siguiente" id="7eE-cc-hOF">
+                            <connections>
+                                <segue destination="XLK-K7-8sy" kind="push" identifier="QuesoSegue" id="jO8-HF-93u"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="pickerMasa" destination="Qvn-KR-e5u" id="pzR-TB-UtR"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="666" y="349"/>
+        </scene>
+        <!--Masa-->
+        <scene sceneID="nIk-YE-qBM">
+            <objects>
+                <controller title="Masa" id="XLK-K7-8sy" customClass="QuesoController" customModule="PizzaDesdeWatch_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Queso" textAlignment="center" id="8Kj-9u-xcb"/>
+                        <picker height="100" alignment="left" id="AMw-aK-fUj">
+                            <connections>
+                                <action selector="onPickerChange:" destination="XLK-K7-8sy" id="SUk-cT-IZL"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Siguiente" id="HC0-xH-8IM">
+                            <connections>
+                                <segue destination="ZAr-YW-OCd" kind="push" identifier="IngredientesSegue" id="4XO-9G-LXP"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="pickerQueso" destination="AMw-aK-fUj" id="qzT-Tr-FEi"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="881" y="344"/>
+        </scene>
+        <!--Queso-->
+        <scene sceneID="jOr-4X-gmG">
+            <objects>
+                <controller title="Queso" id="ZAr-YW-OCd" customClass="IngredientesController" customModule="PizzaDesdeWatch_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Ingredientes" textAlignment="center" id="3Uh-ml-sbd"/>
+                        <switch width="1" alignment="left" value="YES" title="Jamon" id="Dh4-PC-jjV">
+                            <connections>
+                                <action selector="jamonChange:" destination="ZAr-YW-OCd" id="LJu-di-cdJ"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Peperoni" id="Bsd-8i-sHg">
+                            <connections>
+                                <action selector="peperoniChange:" destination="ZAr-YW-OCd" id="w2A-iq-Nre"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Pavo" id="zNe-D6-Aeh">
+                            <connections>
+                                <action selector="paboChange:" destination="ZAr-YW-OCd" id="zSV-Fg-nML"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Salchicha" id="dj2-os-Nca">
+                            <connections>
+                                <action selector="salchichaChange:" destination="ZAr-YW-OCd" id="8FT-73-hlx"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Aceituna" id="FXw-bL-l12">
+                            <connections>
+                                <action selector="aceitunaChange:" destination="ZAr-YW-OCd" id="y4a-uA-Bvo"/>
+                            </connections>
+                        </switch>
+                        <button width="1" alignment="left" title="Siguiente" id="9Pp-9M-RyV">
+                            <connections>
+                                <segue destination="Dvl-6k-AbT" kind="push" identifier="CocinarSegue" id="6ft-cU-zC0"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="jamon" destination="Dh4-PC-jjV" id="BBf-cn-sfd"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1085" y="396"/>
+        </scene>
+        <!--Ingredientes-->
+        <scene sceneID="Bc4-2n-P3K">
+            <objects>
+                <controller title="Ingredientes" id="Dvl-6k-AbT" customClass="CocinarController" customModule="PizzaDesdeWatch_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Cocinar" textAlignment="center" id="qxj-8u-qMs"/>
+                        <label alignment="left" text="Tamaño:" id="CnY-xX-GWA">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label width="1" alignment="left" text="Label" id="wDd-jE-osl">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label alignment="left" text="Masa:" id="Adq-1Y-m1R">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label width="1" alignment="left" text="Label" id="Ri8-4j-mM3">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label alignment="left" text="Queso:" id="ZvI-hw-FuG">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label width="1" alignment="left" text="Label" id="e2a-Pa-Nno">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label alignment="left" text="Ingredientes:" id="Rip-FU-nhw">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label width="1" alignment="left" text="Label" id="7EG-Hc-uQO">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <button width="1" alignment="left" title="Cocinar" id="yHG-3X-Hqj">
+                            <connections>
+                                <action selector="onCocinarClick" destination="Dvl-6k-AbT" id="wGg-zz-FTv"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="txtIngredientes" destination="7EG-Hc-uQO" id="ziz-Cp-s9W"/>
+                        <outlet property="txtMasa" destination="Ri8-4j-mM3" id="WUr-OS-rfg"/>
+                        <outlet property="txtQueso" destination="e2a-Pa-Nno" id="DAl-9I-3zd"/>
+                        <outlet property="txtTamano" destination="wDd-jE-osl" id="rrO-4U-3WW"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1424" y="337"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="PizzaDesdeWatch_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
