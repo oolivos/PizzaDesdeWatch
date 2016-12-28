@@ -103,9 +103,16 @@ class IngredientesController: WKInterfaceController {
         }
     }
     
-    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
-            pizza.ingredientes = ingredientesSeleccionados
-            //print(pizza.tamano)
-            return pizza
+    @IBAction func btnSiguienteClick() {
+        if ingredientesSeleccionados.count > 0 {
+            pizza.ingredientes = ingredientesSeleccionados  
+            pushController(withName: "cocinarController", context: pizza)
+            
+        }else{
+            print("No tiene ongredientes!!")
+        }
+        
     }
+    
+    
 }

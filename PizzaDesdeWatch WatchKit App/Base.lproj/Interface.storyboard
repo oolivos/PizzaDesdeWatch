@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
     </dependencies>
     <scenes>
@@ -135,7 +135,7 @@
                         </switch>
                         <button width="1" alignment="left" title="Siguiente" id="9Pp-9M-RyV">
                             <connections>
-                                <segue destination="Dvl-6k-AbT" kind="push" identifier="CocinarSegue" id="6ft-cU-zC0"/>
+                                <action selector="btnSiguienteClick" destination="ZAr-YW-OCd" id="Ho8-i5-arR"/>
                             </connections>
                         </button>
                     </items>
@@ -149,7 +149,7 @@
         <!--Ingredientes-->
         <scene sceneID="Bc4-2n-P3K">
             <objects>
-                <controller title="Ingredientes" id="Dvl-6k-AbT" customClass="CocinarController" customModule="PizzaDesdeWatch_WatchKit_Extension">
+                <controller identifier="cocinarController" title="Ingredientes" id="Dvl-6k-AbT" customClass="CocinarController" customModule="PizzaDesdeWatch_WatchKit_Extension">
                     <items>
                         <label width="1" alignment="left" text="Cocinar" textAlignment="center" id="qxj-8u-qMs"/>
                         <label alignment="left" text="Tamaño:" id="CnY-xX-GWA">
