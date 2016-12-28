@@ -109,7 +109,10 @@ class IngredientesController: WKInterfaceController {
             pushController(withName: "cocinarController", context: pizza)
             
         }else{
-            print("No tiene ongredientes!!")
+            let okAction = WKAlertAction(title: "ok", style: WKAlertActionStyle.default, handler: {
+                
+            })
+            presentAlert(withTitle: "Pizza", message: "Debes elegir al menos un ingrediente!!", preferredStyle: WKAlertControllerStyle.alert, actions: [okAction])
         }
         
     }
